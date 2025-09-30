@@ -1,7 +1,7 @@
 resource "aws_instance" "main" {
   ami           = var.ami_id
   instance_type = var.instance_type
-  subnet_id     = var.subnet_id
+  subnet_id     = aws_subnet.subnet.id
   key_name      = "${var.instance_name}-key"
 
   root_block_device {

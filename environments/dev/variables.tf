@@ -3,9 +3,10 @@ provider "aws" {
 }
 
 data "aws_ami" "default" {
+  most_recent = true
   filter {
-    name = "name"
-    values = ["Windows_Server-2019-English-Full-Base-2025.05.15"]
+    name   = "image-id"
+    values = ["ami-06e8e9dd6aa7978d7"]
   }
 }
 
